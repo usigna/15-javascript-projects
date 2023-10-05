@@ -11,3 +11,17 @@ hamburgerBtn.addEventListener('click', () => {
     menu.classList.add('show-menu');
   }
 });
+
+const mobile = window.matchMedia("screen and (min-width: 1000px)");
+
+if (mobile.matches) {
+  hamburgerBtn.classList.remove('rotate');
+  menu.classList.remove('show-menu');
+}
+
+mobile.addListener( function(mobile) {
+    if (mobile.matches) {
+      hamburgerBtn.classList.remove('rotate');
+      menu.classList.remove('show-menu');
+    }
+});
